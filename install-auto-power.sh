@@ -1,4 +1,4 @@
-﻿## w8 LA < 1 to start by cmd: sudo bash /hive-config/install-auto-power.sh
+﻿# w8 LA < 1 & turn watchdog off to start by cmd: sudo bash /hive-config/install-auto-power.sh
 sudo mkdir /auto-power/ # 
 sudo chmod 777 /auto-power # 
 sudo mkdir /auto-power/logs/ # 
