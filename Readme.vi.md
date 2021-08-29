@@ -1,4 +1,4 @@
-﻿The text below is in Vietnamese:
+The text below is in Vietnamese (vi-VN):
 
 auto-power - tool tự động tối ưu điện cho trâu (rig).
 
@@ -8,12 +8,14 @@ auto-power - tool tự động tối ưu điện cho trâu (rig).
 - Tự động điều chỉnh điện theo thời gian thực để vga hoạt động với công suất tối ưu với nhiệt độ môi trường ngày đêm khác biệt.
 - Tự động nhận diện và tự động điều chỉnh OC khi danh sách VGA trong rig bị xáo trộn vị trí PCI, thêm vào hay lấy ra khỏi rig 1 hay nhiều vga để bảo trì.
 
-Tool hiện tại hỗ trợ trên HiveOS, các hệ điều hành khác cần 1 vài thay đổi trong file cấu hình là có thể sử dụng được nhưng chưa test thực tế. Riêng RaveOS hiện tại chưa biết cách để cài đặt tool vào, simple mining khó sử dụng tool này do quyền truy cập vào OS bị ngăn cản khắp nơi.
+Tool hiện tại hỗ trợ trên HiveOS, các hệ điều hành khác cần 1 vài thay đổi trong file cấu hình là có thể sử dụng được nhưng chưa test thực tế. Riêng RaveOS hiện tại chưa biết cách để cài đặt tool vào, simple mining khó sử dụng tool này do quyền truy cập vào các chức năng cần thiết của OS bị ngăn cản khắp nơi.
 Tool hiện tại mới chỉ hỗ trợ miner là nbminer.
 Tool hiện tại mới chỉ hỗ trợ coin là ETH.
 Tool hiện tại mới chỉ hỗ trợ NVIDIA VGA.
 Tool cần đánh giá xem nhu cầu của các Miners để cân nhắc xem có nên mở rộng hỗ trợ các coin khác, miner khác hay không. Nếu nhiều người quan tâm có thể phát triển 1 OS riêng để tránh phụ thuộc vào HiveOS hay các OS đang có.
 DevFee 1%: Mỗi ngày 24h tương đương 14.4 phút devfee, Đủ 60 phút trở lên mới thu. Chỉ thu khi rig phát sinh lỗi cần khắc phục, không thu khi rig đang hoạt động bình thường. Sau khi fix hết lỗi nếu máy chạy cả tháng, cả năm không ngừng cũng sẽ không cắt ngang để thu phí. Lệnh thu phí sẽ kích hoạt khi nào rig phát sinh lỗi, kiểm tra đủ 60 phút trở lên mới thu. Thông tin thu phí xem trong file log trong thư mục /auto-power/logs/.
+
+Download auto-power tại địa chỉ: https://github.com/ptn611/auto-power-release/releases
 
 Hướng dẫn cài đặt:
 Dưới đây toàn bộ hướng dẫn cài đặt và sử dụng lấy HiveOS làm ví dụ:
@@ -28,7 +30,7 @@ Sau khi toàn bộ lệnh chạy xong nếu không xuất hiện ngoài ý muố
 Từ Windows truy cập vào thư mục đã được share bằng lệnh \\IP\auto-power (IP là LAN IP có thể tìm thấy trên web quản lý OS)
 copy toàn bộ file bên trong thư mục auto-power\ đã giải nén lúc trước vào thư mục đã shared \\IP\auto-power\
 Từ HiveOS web tắt autoFan (nếu có) gỡ hết OC trên HiveOS để tránh 2 bên tranh nhau cài đặt OC.
-Sau khi đã gỡ autoFan, gỡ OC, tắt watchdog của HieOS, quay lại shellinabox chạy lệnh: sudo bash /auto-power/set-service.sh để cài đặt tool auto-power khởi động cùng với OS và ngay bây giờ khởi động auto-power.
+Sau khi đã gỡ autoFan, gỡ OC, tắt watchdog của HiveOS, quay lại shellinabox chạy lệnh: sudo bash /auto-power/set-service.sh để cài đặt tool auto-power khởi động cùng với OS và ngay bây giờ khởi động auto-power.
 Có thể tìm file auto-power.runtimeconfig.json để sửa bộ số OC cho phù hợp với rig hiện tại hoặc xuất phát từ bộ số mặc định là 0, chờ khoảng 3 - 5 ngày, 1 bộ số tối ưu nhất sẽ quét xong. Ngoài ra còn nhiều chỉ số khác có thể cài đặt theo hướng dẫn ở phần dưới cùng.
 
 Tài liệu tra cứu:
