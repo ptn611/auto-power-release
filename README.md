@@ -11,6 +11,7 @@ The current tool that only supports miners is nbminer.
 The tool currently only supports coin ETH.
 The current tool only supports NVIDIA VGA.
 Tool needs to evaluate the needs of Miners to consider whether to expand to support other coins, other miners or not. If many people are interested, they can develop their own OS to avoid depending on HiveOS or existing OS.
+
 DevFee 1%: Every 24 hours, equivalent to 14.4 minutes of devfee, 60 minutes or more to collect. Receive only when the rig has an error that needs to be fixed, not when the rig is operating normally. After fixing the error, if the machine runs for a whole month, the whole year will not stop to collect fees. The toll command will activate when the rig has an error, check for 60 minutes or more to collect. Fee information can be viewed in the log file in the /auto-power/logs/ directory. Everyone can consider trying it, spend 1% devfee to get back many times more profit 1% devfee, it's a profitable business, can try it and consider if you don't want to stop first. when devfee is full 60 minutes will not be charged. Even sacrificing 1% of devfee to scan the optimal set of numbers for the rig and then stop using it is a bright path. When using auto-power, it helps to thoroughly fix all errors to help VGA run more durable, increase VGA life, which is also a rare benefit.
 
 Installation Instructions:
