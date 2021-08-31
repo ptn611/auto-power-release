@@ -13,6 +13,7 @@ Tool hiện tại mới chỉ hỗ trợ miner là nbminer.
 Tool hiện tại mới chỉ hỗ trợ coin là ETH.
 Tool hiện tại mới chỉ hỗ trợ NVIDIA VGA.
 Tool cần đánh giá xem nhu cầu của các Miners để cân nhắc xem có nên mở rộng hỗ trợ các coin khác, miner khác hay không. Nếu nhiều người quan tâm có thể phát triển 1 OS riêng để tránh phụ thuộc vào HiveOS hay các OS đang có.
+
 DevFee 1%: Mỗi ngày 24h tương đương 14.4 phút devfee, Đủ 60 phút trở lên mới thu. Chỉ thu khi rig phát sinh lỗi cần khắc phục, không thu khi rig đang hoạt động bình thường. Sau khi fix hết lỗi nếu máy chạy cả tháng, cả năm không ngừng cũng sẽ không cắt ngang để thu phí. Lệnh thu phí sẽ kích hoạt khi nào rig phát sinh lỗi, kiểm tra đủ 60 phút trở lên mới thu. Thông tin thu phí xem trong file log trong thư mục /auto-power/logs/. Mọi người có thể cân nhắc dùng thử, bỏ ra 1% devfee để nhận lại được lợi nhuận nhiều hơn nhiều lần 1% devfee thì đó là mối làm ăn có lãi, có thể dùng thử và cân nhắc nếu không muốn có thể ngừng trước khi devfee đủ 60 phút sẽ không bị thu phí. Thậm chí hi sinh 1% devfee để quét được bộ số tối ưu cho rig rồi ngừng sử dụng cũng là 1 con đường sáng. Khi dùng auto-power, nó giúp fix triệt để mọi lỗi giúp VGA chạy bền bỉ hơn, tăng tuổi thọ VGA, đó cũng là lợi ích hiếm có.
 
 Download auto-power tại địa chỉ: https://github.com/ptn611/auto-power-release/releases
