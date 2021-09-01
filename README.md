@@ -14,21 +14,19 @@ Tool needs to evaluate the needs of Miners to consider whether to expand to supp
 
 DevFee 1%: Every 24 hours, equivalent to 14.4 minutes of devfee, 60 minutes or more to collect. Receive only when the rig has an error that needs to be fixed, not when the rig is operating normally. After fixing the error, if the machine runs for a whole month, the whole year will not stop to collect fees. The toll command will activate when the rig has an error, check for 60 minutes or more to collect. Fee information can be viewed in the log file in the /auto-power/logs/ directory. Everyone can consider trying it, spend 1% devfee to get back many times more profit 1% devfee, it's a profitable business, can try it and consider if you don't want to stop first. when devfee is full 60 minutes will not be charged. Even sacrificing 1% of devfee to scan the optimal set of numbers for the rig and then stop using it is a bright path. When using auto-power, it helps to thoroughly fix all errors to help VGA run more durable, increase VGA life, which is also a rare benefit.
 
+auto-power is uploaded at: https://github.com/ptn611/auto-power-release/releases
+
 Installation Instructions:
-Here are the entire installation and usage instructions, taking HiveOS as an example:
-After downloading and extracting, copy the install-auto-power.sh file to the drive (partition) containing the OS config file (eg hiveOS is the drive named Hive).
-This is a file containing a set of commands, like on Windows, this is a *.bat, *.cmd file. It is also possible to copy and run each command sequentially.
-To run the install-auto-power.sh file:
-Before running the install-auto-power.sh file, pay attention to wait for LA < 1 to start. LA is the overall system load index, if any part is overloaded, then LA > 1 (such as CPU overload, overheating or north bridge, VGA, USB/SSD/HDD, ... ).
-After LA < 1, turn off the OS watchdog if it is on.
-After LA < 1, watchdog off, Find shellinabox or any similar app that OS supports on the web to enter commands remotely. For HiveOS type in:
-sudo bash /hive-config/install-auto-power.sh
-After the entire command has finished running, if it does not appear unexpectedly dotnet core 3.1 LTS runtime has been installed, the /auto-power directory on it has been shared with full permissions.
-From Windows access the shared folder with the command \\IP\auto-power (IP is LAN IP can be found on the OS management web)
-copy all the files inside the previously unzipped auto-power\ folder to the shared folder \\IP\auto-power\
-From HiveOS web turn off autoFan (if any) remove all OCs on HiveOS to avoid the two sides competing to install OC.
-After removing autoFan, remove OC, turn off HieOS watchdog, go back to shellinabox run command: sudo bash /auto-power/set-service.sh to install auto-power tool start with OS and now boot auto-power.
-You can find the file auto-power.runtimeconfig.json to fix the OC number set to match the current rig or start from the default set of 0, wait about 3-5 days, the most optimal set of numbers will finish scanning. . There are also many other indicators that can be installed according to the instructions at the bottom.
+- Before installing auto-power, wait for LA < 1 to start. LA is the overall system load index, if any part is overloaded, then LA > 1 (such as CPU overload, overheating or north bridge, VGA, USB/SSD/HDD, ... ).
+- After LA < 1, turn off the OS watchdog if it is on.
+- Turn off autoFan (if any)
+After LA < 1, watchdog off, autoFan off, Find shellinabox or any similar app that OS supports on the web to enter commands remotely. For HiveOS type in:
+sudo wget -c https://github.com/ptn611/auto-power-release/releases/download/v1.0/install-auto-power.sh -O install-auto-power.sh && sudo bash install-auto-power.sh
+Wait around 1 hour for the installation to complete.
+From Windows access the shared auto-power folder with the \\IP\auto-power command (IP is LAN IP that can be found on the OS management web)
+You can find the auto-power.runtimeconfig.json file to edit the OC number set to match the current rig or come from the default set of core 100, memory 800, power 75 numbers (power may have to be changed if some VGA numbers are available). have min power > 75), wait about 3-5 days, the most optimal set of numbers will finish scanning. There are also many other indicators that can be installed according to the instructions at the bottom.
+After auto-power has run, edited the auto-power.runtimeconfig.json file (if any), turned on the OC part, removed and left the core && memory empty on HiveOS to avoid the two sides competing to install OC. Then, run the command sudo systemctl restart auto-power to restart auto-power.
+Video tutorial: https://youtu.be/61kLXJ6ixQM
 
 Research documents:
 The following is an explanation of the parameters in the auto-power.runtimeconfig.json configuration file and the configuration files generated during auto-power run as currentOC.json and currentPowers.json:
