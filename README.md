@@ -20,13 +20,14 @@ Installation Instructions:
 - Before installing auto-power, wait for LA < 1 to start. LA is the overall system load index, if any part is overloaded, then LA > 1 (such as CPU overload, overheating or north bridge, VGA, USB/SSD/HDD, ... ).
 - After LA < 1, turn off the OS watchdog if it is on.
 - Turn off autoFan (if any)
-After LA < 1, watchdog off, autoFan off, Find shellinabox or any similar app that OS supports on the web to enter commands remotely. For HiveOS type in:
+- After LA < 1, watchdog off, autoFan off, Find shellinabox or any similar app that OS supports on the web to enter commands remotely. For HiveOS type in:
+
 sudo wget -c https://github.com/ptn611/auto-power-release/releases/download/v1.0/install-auto-power.sh -O install-auto-power.sh && sudo bash install-auto-power.sh
-Wait around 1 hour for the installation to complete.
-From Windows access the shared auto-power folder with the \\IP\auto-power command (IP is LAN IP that can be found on the OS management web)
-You can find the auto-power.runtimeconfig.json file to edit the OC number set to match the current rig or come from the default set of core 100, memory 800, power 75 numbers (power may have to be changed if some VGA numbers are available). have min power > 75), wait about 3-5 days, the most optimal set of numbers will finish scanning. There are also many other indicators that can be installed according to the instructions at the bottom.
-After auto-power has run, edited the auto-power.runtimeconfig.json file (if any), turned on the OC part, removed and left the core && memory empty on HiveOS to avoid the two sides competing to install OC. Then, run the command sudo systemctl restart auto-power to restart auto-power.
-Video tutorial: https://youtu.be/61kLXJ6ixQM
+- Wait around 1 hour for the installation to complete.
+- From Windows access the shared auto-power folder with the \\IP\auto-power command (IP is LAN IP that can be found on the OS management web)
+- You can find the auto-power.runtimeconfig.json file to edit the OC number set to match the current rig or come from the default set of core 100, memory 800, power 75 numbers (power may have to be changed if some VGA numbers are available). have min power > 75), wait about 3-5 days, the most optimal set of numbers will finish scanning. There are also many other indicators that can be installed according to the instructions at the bottom.
+- After auto-power has run, edited the auto-power.runtimeconfig.json file (if any), turned on the OC part, removed and left the core && memory empty on HiveOS to avoid the two sides competing to install OC. Then, run the command sudo systemctl restart auto-power to restart auto-power.
+- Video tutorial: https://youtu.be/61kLXJ6ixQM
 
 Research documents:
 The following is an explanation of the parameters in the auto-power.runtimeconfig.json configuration file and the configuration files generated during auto-power run as currentOC.json and currentPowers.json:
