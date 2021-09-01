@@ -16,23 +16,19 @@ Tool cần đánh giá xem nhu cầu của các Miners để cân nhắc xem có
 
 DevFee 1%: Mỗi ngày 24h tương đương 14.4 phút devfee, Đủ 60 phút trở lên mới thu. Chỉ thu khi rig phát sinh lỗi cần khắc phục, không thu khi rig đang hoạt động bình thường. Sau khi fix hết lỗi nếu máy chạy cả tháng, cả năm không ngừng cũng sẽ không cắt ngang để thu phí. Lệnh thu phí sẽ kích hoạt khi nào rig phát sinh lỗi, kiểm tra đủ 60 phút trở lên mới thu. Thông tin thu phí xem trong file log trong thư mục /auto-power/logs/. Mọi người có thể cân nhắc dùng thử, bỏ ra 1% devfee để nhận lại được lợi nhuận nhiều hơn nhiều lần 1% devfee thì đó là mối làm ăn có lãi, có thể dùng thử và cân nhắc nếu không muốn có thể ngừng trước khi devfee đủ 60 phút sẽ không bị thu phí. Thậm chí hi sinh 1% devfee để quét được bộ số tối ưu cho rig rồi ngừng sử dụng cũng là 1 con đường sáng. Khi dùng auto-power, nó giúp fix triệt để mọi lỗi giúp VGA chạy bền bỉ hơn, tăng tuổi thọ VGA, đó cũng là lợi ích hiếm có.
 
-Download auto-power tại địa chỉ: https://github.com/ptn611/auto-power-release/releases
+auto-power được upload tại địa chỉ: https://github.com/ptn611/auto-power-release/releases
 
 Hướng dẫn cài đặt:
-Dưới đây toàn bộ hướng dẫn cài đặt và sử dụng lấy HiveOS làm ví dụ:
-Sau khi download và giải nén copy file install-auto-power.sh vào ổ đĩa (partition) chứa file config của OS (ví dụ hiveOS là ổ đĩa có tên Hive).
-Đây là file chứa tập hợp nhiều lệnh, giống như trên Windows thì đây là file *.bat, *.cmd. Cũng có thể copy chạy từng lệnh tuần tự.
-Để chạy file install-auto-power.sh: 
-Trước khi chạy file install-auto-power.sh để ý chờ LA < 1 mới nên bắt đầu. LA là chỉ số tải toàn bộ hệ thống, nếu có bất kỳ 1 bộ phận nào đang quá tải thì LA > 1 (chẳng hạn như CPU quá tải, quá nóng hoặc north bridge, VGA, USB/SSD/HDD, ...).
-Sau khi LA < 1, tắt watchdog của OS nếu đang bật.
-Sau khi LA < 1, watchdog off, Tìm shellinabox hoặc bất cứ 1 app gì tương tự mà OS hỗ trợ trên web để nhập lệnh từ xa. Đối với HiveOS gõ vào:
-sudo bash /hive-config/install-auto-power.sh
-Sau khi toàn bộ lệnh chạy xong nếu không xuất hiện ngoài ý muốn dotnet core 3.1 LTS runtime đã được cài đặt, thư mục /auto-power trên đó đã được shared full quyền.
-Từ Windows truy cập vào thư mục đã được share bằng lệnh \\IP\auto-power (IP là LAN IP có thể tìm thấy trên web quản lý OS)
-copy toàn bộ file bên trong thư mục auto-power\ đã giải nén lúc trước vào thư mục đã shared \\IP\auto-power\
-Từ HiveOS web tắt autoFan (nếu có) gỡ hết OC trên HiveOS để tránh 2 bên tranh nhau cài đặt OC.
-Sau khi đã gỡ autoFan, gỡ OC, tắt watchdog của HiveOS, quay lại shellinabox chạy lệnh: sudo bash /auto-power/set-service.sh để cài đặt tool auto-power khởi động cùng với OS và ngay bây giờ khởi động auto-power.
-Có thể tìm file auto-power.runtimeconfig.json để sửa bộ số OC cho phù hợp với rig hiện tại hoặc xuất phát từ bộ số mặc định là 0, chờ khoảng 3 - 5 ngày, 1 bộ số tối ưu nhất sẽ quét xong. Ngoài ra còn nhiều chỉ số khác có thể cài đặt theo hướng dẫn ở phần dưới cùng.
+- Trước khi cài đặt auto-power để ý chờ LA < 1 mới nên bắt đầu. LA là chỉ số tải toàn bộ hệ thống, nếu có bất kỳ 1 bộ phận nào đang quá tải thì LA > 1 (chẳng hạn như CPU quá tải, quá nóng hoặc north bridge, VGA, USB/SSD/HDD, ...).
+- Sau khi LA < 1, tắt watchdog của OS nếu đang bật.
+- Tắt autoFan (nếu có)
+Sau khi LA < 1, watchdog off, autoFan off, Tìm shellinabox hoặc bất cứ 1 app gì tương tự mà OS hỗ trợ trên web để nhập lệnh từ xa. Đối với HiveOS gõ vào:
+sudo wget -c https://github.com/ptn611/auto-power-release/releases/download/v1.0/install-auto-power.sh -O install-auto-power.sh && sudo bash install-auto-power.sh
+Chờ xung quanh 1h là cài đặt xong.
+Từ Windows truy cập vào thư mục auto-power đã được share bằng lệnh \\IP\auto-power (IP là LAN IP có thể tìm thấy trên web quản lý OS)
+Có thể tìm file auto-power.runtimeconfig.json để sửa bộ số OC cho phù hợp với rig hiện tại hoặc xuất phát từ bộ số mặc định core 100, memory 800, power 75 (power có thể phải thay đổi nếu 1 số VGA có min power > 75), chờ khoảng 3 - 5 ngày, 1 bộ số tối ưu nhất sẽ quét xong. Ngoài ra còn nhiều chỉ số khác có thể cài đặt theo hướng dẫn ở phần dưới cùng.
+Sau khi auto-power đã chạy, đã sửa file auto-power.runtimeconfig.json (nếu có), bật phần OC lên, gỡ và để trống core && memory trên HiveOS để tránh 2 bên tranh nhau cài đặt OC. Sau đó, chạy lệnh sudo systemctl restart auto-power để khởi động lại auto-power.
+Video hướng dẫn: https://youtu.be/61kLXJ6ixQM
 
 Tài liệu tra cứu:
 Dưới đây là giải thích các chỉ số trong file cấu hình auto-power.runtimeconfig.json và các file cấu hình sinh ra trong quá trình chạy auto-power là currentOC.json và currentPowers.json:
