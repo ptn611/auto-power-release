@@ -22,13 +22,14 @@ Hướng dẫn cài đặt:
 - Trước khi cài đặt auto-power để ý chờ LA < 1 mới nên bắt đầu. LA là chỉ số tải toàn bộ hệ thống, nếu có bất kỳ 1 bộ phận nào đang quá tải thì LA > 1 (chẳng hạn như CPU quá tải, quá nóng hoặc north bridge, VGA, USB/SSD/HDD, ...).
 - Sau khi LA < 1, tắt watchdog của OS nếu đang bật.
 - Tắt autoFan (nếu có)
-Sau khi LA < 1, watchdog off, autoFan off, Tìm shellinabox hoặc bất cứ 1 app gì tương tự mà OS hỗ trợ trên web để nhập lệnh từ xa. Đối với HiveOS gõ vào:
+- Sau khi LA < 1, watchdog off, autoFan off, Tìm shellinabox hoặc bất cứ 1 app gì tương tự mà OS hỗ trợ trên web để nhập lệnh từ xa. Đối với HiveOS gõ vào:
+
 sudo wget -c https://github.com/ptn611/auto-power-release/releases/download/v1.0/install-auto-power.sh -O install-auto-power.sh && sudo bash install-auto-power.sh
-Chờ xung quanh 1h là cài đặt xong.
-Từ Windows truy cập vào thư mục auto-power đã được share bằng lệnh \\IP\auto-power (IP là LAN IP có thể tìm thấy trên web quản lý OS)
-Có thể tìm file auto-power.runtimeconfig.json để sửa bộ số OC cho phù hợp với rig hiện tại hoặc xuất phát từ bộ số mặc định core 100, memory 800, power 75 (power có thể phải thay đổi nếu 1 số VGA có min power > 75), chờ khoảng 3 - 5 ngày, 1 bộ số tối ưu nhất sẽ quét xong. Ngoài ra còn nhiều chỉ số khác có thể cài đặt theo hướng dẫn ở phần dưới cùng.
-Sau khi auto-power đã chạy, đã sửa file auto-power.runtimeconfig.json (nếu có), bật phần OC lên, gỡ và để trống core && memory trên HiveOS để tránh 2 bên tranh nhau cài đặt OC. Sau đó, chạy lệnh sudo systemctl restart auto-power để khởi động lại auto-power.
-Video hướng dẫn: https://youtu.be/61kLXJ6ixQM
+- Chờ xung quanh 1h là cài đặt xong.
+- Từ Windows truy cập vào thư mục auto-power đã được share bằng lệnh \\IP\auto-power (IP là LAN IP có thể tìm thấy trên web quản lý OS)
+- Có thể tìm file auto-power.runtimeconfig.json để sửa bộ số OC cho phù hợp với rig hiện tại hoặc xuất phát từ bộ số mặc định core 100, memory 800, power 75 (power có thể phải thay đổi nếu 1 số VGA có min power > 75), chờ khoảng 3 - 5 ngày, 1 bộ số tối ưu nhất sẽ quét xong. Ngoài ra còn nhiều chỉ số khác có thể cài đặt theo hướng dẫn ở phần dưới cùng.
+- Sau khi auto-power đã chạy, đã sửa file auto-power.runtimeconfig.json (nếu có), bật phần OC lên, gỡ và để trống core && memory trên HiveOS để tránh 2 bên tranh nhau cài đặt OC. Sau đó, chạy lệnh sudo systemctl restart auto-power để khởi động lại auto-power.
+- Video hướng dẫn: https://youtu.be/61kLXJ6ixQM
 
 Tài liệu tra cứu:
 Dưới đây là giải thích các chỉ số trong file cấu hình auto-power.runtimeconfig.json và các file cấu hình sinh ra trong quá trình chạy auto-power là currentOC.json và currentPowers.json:
